@@ -3,7 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#81D4FA"
+    android:background="@drawable/wallpaper_purple"
     android:orientation="vertical"
     android:padding="30dp">
 
@@ -16,9 +16,11 @@
         android:layout_marginBottom="40dp">
 
         <ImageView
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:src="@android:drawable/ic_dialog_info"/>
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/ic_logo_foreground"
+            android:background="@drawable/ic_logo_foreground"
+            />
 
         <TextView
             android:layout_width="wrap_content"
