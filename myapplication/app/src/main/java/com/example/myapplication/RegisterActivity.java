@@ -14,11 +14,15 @@ public class RegisterActivity extends AppCompatActivity {
     private EditText etNickname, etPwd, etPwdConfirm, etSignature;
     private Spinner spGender;
     private Button btnRegister;
+    private DBHelper dbHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
+
+        // 初始化数据库帮助类
+        dbHelper = new DBHelper(this);
 
         // 绑定控件
         initView();
@@ -37,11 +41,13 @@ public class RegisterActivity extends AppCompatActivity {
         btnRegister = findViewById(R.id.btn_register);
     }
 
-    // 注册表单校验 + 回传信息
+    // 注册表单校验 + 数据库存储
     private void checkRegisterForm() {
         String nickname = etNickname.getText().toString().trim(); // 账号用昵称替代
         String pwd = etPwd.getText().toString().trim();
         String pwdConfirm = etPwdConfirm.getText().toString().trim();
+        String signature = etSignature.getText().toString().trim();
+        String gender = spGender.getSelectedItem().toString();
 
         // 1. 不为空检查
         if (nickname.isEmpty()) {
@@ -63,14 +69,27 @@ public class RegisterActivity extends AppCompatActivity {
             return;
         }
 
-        // 3. 注册成功：回传信息到登录页
+        // 3. 检查账号是否已存在（SQLite 查重）
+        if (dbHelper.isAccountExists(nickname)) {
+            Toast.makeText(this, "该账号已存在，请更换昵称", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        // 4. 写入 SQLite 数据库
+        long result = dbHelper.insertUser(nickname, pwd, signature, gender);
+        if (result == -1) {
+            Toast.makeText(this, "注册失败，请重试", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        // 5. 注册成功：回传信息到登录页
         Intent intent = new Intent();
         intent.putExtra("account", nickname); // 账号=昵称
         intent.putExtra("password", pwd);     // 密码
         setResult(RESULT_OK, intent); // 设置返回结果
 
-        // 4. 提示+自动跳转回登录页
-        Toast.makeText(this, "注册成功！自动返回登录页", Toast.LENGTH_LONG).show();
+        // 6. 提示+自动跳转回登录页
+        Toast.makeText(this, "注册成功！", Toast.LENGTH_LONG).show();
         finish(); // 关闭注册页，返回登录页
     }
 }

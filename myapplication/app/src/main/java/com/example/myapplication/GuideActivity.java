@@ -1,6 +1,7 @@
 package com.example.myapplication;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -27,6 +28,16 @@ public class GuideActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_guide);
+
+        // 检查自动登录状态：如果开启了自动登录，直接跳转到好友列表页
+        SharedPreferences sp = getSharedPreferences("login_config", MODE_PRIVATE);
+        boolean autoLogin = sp.getBoolean("auto_login", false);
+        if (autoLogin) {
+            Intent intent = new Intent(GuideActivity.this, FriendListActivity.class);
+            startActivity(intent);
+            finish();
+            return;
+        }
 
         // 初始化控件
         vpGuide = findViewById(R.id.vp_guide);
