@@ -1,0 +1,9 @@
+<resources>
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">#6A1B9A</item>
+        <item name="colorPrimaryDark">#4A148C</item>
+        <item name="colorAccent">#0099FF</item>
+        <!-- 冷启动闪屏背景：显示紫色渐变，替代默认白屏 -->
+        <item name="android:windowBackground">@drawable/splash_background</item>
+    </style>
+</resources>

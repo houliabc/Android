@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#6A1B9A"
+    android:orientation="vertical"
+    android:padding="30dp"
+    android:gravity="center_horizontal">
+
+    <!-- QQ图标 -->
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@android:drawable/ic_dialog_info"
+        android:layout_marginBottom="50dp"/>
+
+    <!-- 账号输入行 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="账号："
+            android:textSize="18sp"
+            android:textColor="#FFFFFF"/>
+
+        <EditText
+            android:id="@+id/et_account"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="请输入账号"
+            android:textColorHint="#EEEEEE"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#FFFFFF"
+            android:layout_marginLeft="10dp"/>
+    </LinearLayout>
+
+    <!-- 密码输入行 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="密码："
+            android:textSize="18sp"
+            android:textColor="#FFFFFF"/>
+
+        <EditText
+            android:id="@+id/et_pwd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="请输入密码"
+            android:textColorHint="#EEEEEE"
+            android:textColor="#FFFFFF"
+            android:inputType="textPassword"
+            android:backgroundTint="#FFFFFF"
+            android:layout_marginLeft="10dp"/>
+    </LinearLayout>
+
+    <!-- 记住密码、自动登录复选框 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="30dp">
+
+        <CheckBox
+            android:id="@+id/cb_remember_pwd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="记住密码"
+            android:textColor="#FFFFFF"/>
+
+        <CheckBox
+            android:id="@+id/cb_auto_login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="自动登录"
+            android:textColor="#FFFFFF"
+            android:layout_marginLeft="30dp"/>
+    </LinearLayout>
+
+    <!-- 登录、注册按钮 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/btn_login"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:text="登录"
+            android:backgroundTint="#0099FF"
+            android:textColor="#FFFFFF"
+            android:layout_marginRight="20dp"/>
+
+        <Button
+            android:id="@+id/btn_go_register"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:text="注册"
+            android:backgroundTint="#0099FF"
+            android:textColor="#FFFFFF"/>
+    </LinearLayout>
+
+</LinearLayout>

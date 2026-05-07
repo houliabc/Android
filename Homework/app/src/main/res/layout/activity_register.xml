@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#7BD1F9"
+    android:orientation="vertical"
+    android:padding="30dp"
+    android:gravity="center_horizontal">
+
+    <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical" android:layout_marginTop="30dp" android:layout_marginBottom="40dp">
+        <ImageView android:layout_width="60dp" android:layout_height="60dp" android:src="@android:drawable/ic_dialog_info" />
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="QQ 注册" android:textColor="#FFF" android:textSize="30sp" android:layout_marginLeft="15dp"/>
+    </LinearLayout>
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical" android:layout_marginTop="15dp">
+        <TextView android:layout_width="80dp" android:layout_height="wrap_content" android:text="昵称" android:textColor="#FFF" android:textSize="18sp"/>
+        <EditText android:id="@+id/et_reg_nick" android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="请输入昵称" android:textColorHint="#EEE" android:textColor="#FFF" android:backgroundTint="#FFF"/>
+    </LinearLayout>
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical" android:layout_marginTop="15dp">
+        <TextView android:layout_width="80dp" android:layout_height="wrap_content" android:text="密码" android:textColor="#FFF" android:textSize="18sp"/>
+        <EditText android:id="@+id/et_reg_pwd" android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="请输入密码" android:inputType="textPassword" android:textColorHint="#EEE" android:textColor="#FFF" android:backgroundTint="#FFF"/>
+    </LinearLayout>
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical" android:layout_marginTop="15dp">
+        <TextView android:layout_width="80dp" android:layout_height="wrap_content" android:text="确认密码" android:textColor="#FFF" android:textSize="18sp"/>
+        <EditText android:id="@+id/et_reg_confirm" android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="请再次输入密码" android:inputType="textPassword" android:textColorHint="#EEE" android:textColor="#FFF" android:backgroundTint="#FFF"/>
+    </LinearLayout>
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical" android:layout_marginTop="15dp">
+        <TextView android:layout_width="80dp" android:layout_height="wrap_content" android:text="个性签名" android:textColor="#FFF" android:textSize="18sp"/>
+        <EditText android:id="@+id/et_reg_sign" android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="请输入个性签名" android:textColorHint="#EEE" android:textColor="#FFF" android:backgroundTint="#FFF"/>
+    </LinearLayout>
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical" android:layout_marginTop="15dp">
+        <TextView android:layout_width="80dp" android:layout_height="wrap_content" android:text="性别" android:textColor="#FFF" android:textSize="18sp"/>
+        <Spinner android:id="@+id/spinner_gender" android:layout_width="match_parent" android:layout_height="wrap_content" android:entries="@array/gender_array"/>
+    </LinearLayout>
+
+    <Button android:id="@+id/btn_register" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="点击注册" android:backgroundTint="#0099FF" android:textColor="#FFF" android:layout_marginTop="40dp"/>
+</LinearLayout>

@@ -1,0 +1,25 @@
+buildscript {
+    repositories {
+        maven { url 'https://maven.aliyun.com/repository/google' }
+        google()
+        mavenCentral()
+        jcenter() // 新增：必须添加JCenter仓库，否则找不到achartengine
+    }
+    dependencies {
+        classpath "com.android.tools.build:gradle:4.2.2"
+        // 有Kotlin则添加：classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.5.31"
+    }
+}
+
+allprojects {
+    repositories {
+        maven { url 'https://maven.aliyun.com/repository/google' }
+        google()
+        mavenCentral()
+        jcenter() // 新增：全局仓库，让所有模块都能访问achartengine
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

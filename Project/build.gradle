@@ -1,0 +1,22 @@
+buildscript {
+    repositories {
+        google() // 必须优先配置Google仓库（AGP插件唯一官方源）
+        mavenCentral()
+        // 阿里云镜像（作为备用，可选）
+        maven { url 'https://maven.aliyun.com/repository/google' }
+        maven { url 'https://maven.aliyun.com/repository/central' }
+    }
+    dependencies {
+        // 替换成兼容Gradle 9.0.0的AGP版本（不要写9.0）
+        classpath 'com.android.tools.build:gradle:8.11.2'
+    }
+}
+
+allprojects {
+    repositories {
+        google() // 同样要优先配置
+        mavenCentral()
+        maven { url 'https://maven.aliyun.com/repository/google' }
+        maven { url 'https://maven.aliyun.com/repository/central' }
+    }
+}

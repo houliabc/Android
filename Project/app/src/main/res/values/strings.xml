@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">MyQQ</string>
+    <!-- 性别下拉列表 -->
+    <string-array name="gender_list">
+        <item>男</item>
+        <item>女</item>
+    </string-array>
+    <!-- 引导页文字 -->
+    <string name="guide_title1">欢迎使用MyQQ</string>
+    <string name="guide_title2">安全便捷的聊天工具</string>
+    <string name="guide_title3">开启你的社交之旅</string>
+    <string name="guide_btn">立即进入</string>
+    <!-- 好友列表 -->
+    <string name="friend_list_title">我的好友</string>
+</resources>
